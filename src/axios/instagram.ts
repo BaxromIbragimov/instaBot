@@ -1,4 +1,5 @@
 import axios from 'axios'
+import config from '../config/config';
 
 export async function instaSave(url: string | undefined) {
     try {
@@ -9,10 +10,8 @@ export async function instaSave(url: string | undefined) {
                 url,
             },
             headers: {
-                'X-RapidAPI-Key':
-                    '0ab5664dfcmsh247b262efe53fbfp1de9fajsnde808d414400',
-                'X-RapidAPI-Host':
-                    'instagram-post-and-reels-downloader.p.rapidapi.com',
+                'X-RapidAPI-Key': config.XRapidAPIKey,
+                'X-RapidAPI-Host': config.XRapidAPIHost,
             },
         }
 
