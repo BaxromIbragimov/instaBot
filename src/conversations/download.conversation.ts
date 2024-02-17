@@ -13,8 +13,8 @@ export async function downloadConversation(
     const data = await instaSave(url)
 
     ctx.chatAction = 'upload_video'
-    await ctx.replyWithVideo(data.urls[0].url, {
-        caption: `<b>${data.meta.title}</b>\n\n@dars_uchun_video_yuklovchi_bot`,
+    await ctx.replyWithVideo(data[0].link, {
+        caption: `<b>${data[0].title}</b>\n\n\@baxrom0206000Bot`,
         parse_mode: 'HTML',
     })
     await ctx.api.deleteMessage(waitMessage.chat.id, waitMessage.message_id)

@@ -1,13 +1,14 @@
 import axios from 'axios'
 import config from '../config/config';
+import { link } from 'fs/promises';
 
 export async function instaSave(url: string | undefined) {
     try {
         const options = {
             method: 'GET',
-            url: 'https://instagram-post-and-reels-downloader.p.rapidapi.com/insta/',
+            url: 'https://instagram-post-and-reels-downloader.p.rapidapi.com/',
             params: {
-                url,
+                url
             },
             headers: {
                 'X-RapidAPI-Key': config.XRapidAPIKey,
@@ -16,8 +17,8 @@ export async function instaSave(url: string | undefined) {
         }
 
         const response = await axios.request(options)
-
-        return response.data.detail.data.items[0]
+        console.log(response.data)
+        return response.data
     } catch (error) {
         throw error
     }

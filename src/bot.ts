@@ -7,18 +7,8 @@ import { autoChatAction } from '@grammyjs/auto-chat-action'
 import express from 'express'
 import config from './config/config';
 
-const bot = new Bot<MyContext>(config.BOT_TOKEN)
 
-bot.api.setMyCommands([
-    {
-        command: 'start',
-        description: 'to start the bot',
-    },
-    {
-        command: 'category',
-        description: 'to see the categories click this command',
-    },
-])
+const bot = new Bot<MyContext>(config.BOT_TOKEN)
 
 bot.use(setupSession())
 bot.use(conversations())
@@ -29,6 +19,7 @@ bot.use(autoChatAction())
 bot.command('start', async (ctx) => {
     await ctx.conversation.enter('startConversation')
 })
+
 
 bot.on('message::url', async (ctx) => {
     await ctx.conversation.enter('downloadConversation')
