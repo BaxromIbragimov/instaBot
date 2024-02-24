@@ -17,7 +17,6 @@ export async function instaSave(url: string | undefined) {
         }
 
         const response = await axios.request(options)
-        console.log(response.data)
         return response.data
     } catch (error) {
         throw error

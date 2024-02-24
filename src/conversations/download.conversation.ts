@@ -13,6 +13,8 @@ export async function downloadConversation(
     const data = await instaSave(url)
 
     ctx.chatAction = 'upload_video'
+     console.log(url);
+
     await ctx.replyWithVideo(data[0].link, {
         caption: `<b>${data[0].title}</b>\n\n\@baxrom0206000Bot`,
         parse_mode: 'HTML',

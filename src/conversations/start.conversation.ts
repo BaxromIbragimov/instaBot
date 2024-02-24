@@ -31,8 +31,8 @@ export async function startConversation(
             firstName,
             lastName,
             phoneNumber,
-        }
-
+        }   
+ console.log(newUser)
         users.push(newUser)
 
         await ctx.reply('You have successfully registered. Welcome!', {
