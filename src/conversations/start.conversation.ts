@@ -18,7 +18,7 @@ export async function startConversation(
         await ctx.reply('What is your lastname?')
         const lastName = (await conversation.waitFor(':text')).message?.text
 
-        await ctx.reply('Could you shre your phone number?', {
+        await ctx.reply('Could you share your phone number?', {
             reply_markup: new Keyboard()
                 .requestContact('☎️ Share Contact')
                 .resized(),
