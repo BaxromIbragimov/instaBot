@@ -18,6 +18,10 @@ bot.use(autoChatAction())
 
 bot.command('start', async (ctx) => {
     await ctx.conversation.enter('startConversation')
+        {
+        command: 'start',
+        description: 'to start the bot',
+    },
 })
 
 
