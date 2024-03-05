@@ -16,11 +16,14 @@ bot.use(createConversation(startConversation))
 bot.use(createConversation(downloadConversation))
 bot.use(autoChatAction())
 
+bot.api.setMyCommands([
+    {
+        command: 'start',
+        description: 'to start the bot',
+    },
+])
 bot.command('start', async (ctx) => {
     await ctx.conversation.enter('startConversation')
-         reply_markup: new Keyboard()
-                .requestContact('start')
-                .resized(),
 })
 
 
