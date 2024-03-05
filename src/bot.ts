@@ -1,4 +1,5 @@
 import { Bot, webhookCallback,Keyboard } from 'grammy'
+import { Keyboard } from 'grammy'
 import { MyContext, setupSession } from './session/session'
 import { conversations, createConversation } from '@grammyjs/conversations'
 import { startConversation } from './conversations/start.conversation'
@@ -23,7 +24,12 @@ bot.api.setMyCommands([
     },
 ])
 bot.command('start', async (ctx) => {
-    await ctx.conversation.enter('startConversation')
+    await ctx.conversation.enter('startConversation'),
+       await ctx.reply({
+            reply_markup: new Keyboard()
+                .requestContact('startni bosing')
+                .resized(),
+        })
 })
 
 
