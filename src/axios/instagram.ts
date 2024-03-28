@@ -15,7 +15,6 @@ export async function instaSave(url: string | undefined) {
                 'X-RapidAPI-Host': config.XRapidAPIHost,
             },
         }
-
         const response = await axios.request(options)
         return response.data
     } catch (error) {
